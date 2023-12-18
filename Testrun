@@ -1,0 +1,25 @@
+def xor_encrypt(data, key):
+    encrypted_data = [int(digit) ^ int(key) for digit in data]
+    return ''.join(map(str, encrypted_data))
+
+def xor_decrypt(encrypted_data, key):
+    decrypted_data = [int(digit) ^ int(key) for digit in encrypted_data]
+    return ''.join(map(str, decrypted_data))
+
+def main():
+    # Input 16-digit value
+    original_data = input("Enter a 16-digit value: ")
+    
+    # Input encryption key
+    encryption_key = input("Enter the encryption key: ")
+
+    # Encrypt the data
+    encrypted_data = xor_encrypt(original_data, encryption_key)
+    print(f'Encrypted Data: {encrypted_data}')
+
+    # Decrypt the data
+    decrypted_data = xor_decrypt(encrypted_data, encryption_key)
+    print(f'Decrypted Data: {decrypted_data}')
+
+if __name__ == "__main__":
+    main()
